@@ -101,12 +101,16 @@ class PinView extends View {
      * @param circleColor  the color of the selector circle
      */
     public void init(Context ctx, float y, float pinRadiusDP, int pinColor, int textColor,
-            float circleRadius, int circleColor) {
+            float circleRadius, int circleColor, boolean floatingPins) {
         mRes = ctx.getResources();
         mPin = ctx.getResources().getDrawable(R.drawable.rotate);
 
-        mPinPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                15, mRes.getDisplayMetrics());
+        if (floatingPins) {
+            mPinPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                    15, mRes.getDisplayMetrics());
+        } else {
+            mPinPadding = 0;
+        }
         mCircleRadiusPx = circleRadius;
         mTextYPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 3.5f, mRes.getDisplayMetrics());

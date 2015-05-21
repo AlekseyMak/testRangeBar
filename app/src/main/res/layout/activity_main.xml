@@ -16,7 +16,7 @@
         custom:tickStart="5"
         custom:tickInterval="1"
         custom:tickEnd="10"
-        custom:floatingPins="true"
+        custom:floatingPins="false"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
 </RelativeLayout>
